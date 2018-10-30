@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Subject, Observable } from "rxjs";
 import { startWith, map, debounceTime } from "rxjs/operators";
 
-const DEFAULT_RESULTS = ["a", "b", "c"];
-const SEARCH_RESULTS = ["d", "e", "f"];
+const DEFAULT_RESULTS = ["Abe", "Karen"];
+const SEARCH_RESULTS = ["Dan", "Ben"];
 
 @Component({
     selector: "app-root",
@@ -27,9 +27,6 @@ export class AppComponent implements OnInit {
             debounceTime(300),
             map((term) => {
                 const searchTerm = term && term.length > 0 ? term : "";
-
-                console.log(term);
-
                 if (!searchTerm) {
                     return DEFAULT_RESULTS;
                 } else {

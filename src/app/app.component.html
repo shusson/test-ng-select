@@ -1,5 +1,5 @@
-
-<ng-select
+<div>
+    <ng-select
     [items]="search$ | async"
     [typeahead]="autocompleteInput$"
     [multiple]="true"
@@ -7,9 +7,11 @@
     [closeOnSelect]="false"
     [(ngModel)]="filter.values">
 
-    <ng-template ng-option-tmp let-item="item" let-searchTerm="searchTerm">
-        <span>{{ item }}</span>
-    </ng-template>
+        <ng-template ng-option-tmp let-item="item" let-searchTerm="searchTerm">
+            <span>{{ item }}</span>
+        </ng-template>
 
-</ng-select>
+    </ng-select>
+
+</div>
 
